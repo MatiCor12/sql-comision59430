@@ -214,6 +214,7 @@ La base de datos malta_gamers proporciona una estructura bien organizada para re
  Store procedure:
 
 ### Roles y privilegios a usuarios.
+La gestión de usuarios y privilegios en una base de datos es fundamental para asegurar un acceso controlado y seguro a la información. Mediante la asignación de roles y permisos específicos, es posible regular qué acciones pueden realizar los diferentes usuarios dentro de la base de datos, según sus responsabilidades dentro de la organización.
 
 ### Backup de la base de datos
 
@@ -225,9 +226,5 @@ Este proyecto contiene:
 * **MySql**
 * **MySQL Workbench**
 * **Draw.io**
-
-
-
-
 
 ---
