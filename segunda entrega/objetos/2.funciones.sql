@@ -1,3 +1,5 @@
+USE malta_gamers;
+
 --Calcula el Costo de Envío
 
 DELIMITER //

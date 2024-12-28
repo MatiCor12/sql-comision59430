@@ -9,6 +9,9 @@ SELECT
 FROM pedido
 GROUP BY YEAR(fecha_pedido), MONTH(fecha_pedido);
 
+-- Ejemplo
+SELECT * FROM vw_ingresos_por_pedido;
+
 -- Top 10 productos mas vendidos
 
 CREATE VIEW vw_productos_mas_vendidos AS
@@ -22,6 +25,9 @@ GROUP BY pg.producto
 ORDER BY unidades_vendidas DESC
 LIMIT 10;
 
+-- Ejemplo
+SELECT * FROM vw_productos_mas_vendidos;
+
 -- Vista de Total de Clientes General
 CREATE VIEW vw_total_clientes AS
 SELECT
@@ -29,6 +35,9 @@ SELECT
     COUNT(DISTINCT telefono_cliente_comprador) as clientes_con_telefono,
     COUNT(DISTINCT email_cliente_comprador) as clientes_con_email
 FROM cliente_comprador;
+
+-- Ejemplo
+SELECT * FROM vw_total_clientes;
 
 -- Vista de Nuevos Clientes por Período
 CREATE VIEW vw_nuevos_clientes_periodo AS
@@ -47,3 +56,22 @@ FROM (
 ) as primeras_compras
 GROUP BY YEAR(primera_compra), MONTH(primera_compra)
 ORDER BY año, mes;
+
+-- Ejemplo
+SELECT * FROM vw_nuevos_clientes_periodo;
+
+--Vista para obtener los pagos realizados por cada pedido, con su método de pago
+CREATE VIEW vw_pagos_pedidos AS
+SELECT
+    pa.id_pago,
+    pa.fecha_pago,
+    pa.monto,
+    pa.metodo_pago,
+    p.id_pedido,
+    p.total AS total_pedido
+FROM
+    Pago pa
+JOIN Pedido p ON pa.id_pedido = p.id_pedido;
+
+-- Ejemplo
+SELECT * FROM vw_pagos_pedidos;

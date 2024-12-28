@@ -1,3 +1,5 @@
+USE malta_gamers;
+
 --Calcula el Costo de Envío
 
 DELIMITER //
@@ -32,3 +34,4 @@ DELIMITER ;
 
 -- Ejemplo
 SELECT GenerarNumeroSeguimiento(1) AS numero_seguimiento;
+

@@ -34,3 +34,14 @@ BEGIN
 END//
 
 DELIMITER ;
+
+--Ejemplo
+--Estado inicial
+SELECT * FROM Pedido;
+
+--Insertar pago y activa el trigger
+INSERT INTO pago (id_pedido, fecha_pago, monto, metodo_pago)
+VALUES (3, '2024-11-02', 450.00, 'Transferencia Bancaria');
+
+--Volver a verificar el pedido
+SELECT * FROM Pedido;
